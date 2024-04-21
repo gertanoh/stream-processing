@@ -1,23 +1,20 @@
-# Working with Count min Sketch ?
+# Count Min Sketch
 
-What problem does it try to solve ?
-How do you count the cardinality of a stream with bilions of events ? 
-A classic computer science problem that can be solve using a hash map.
-However, that solution has impratical space requirements at large scale.
-Probabilistic data structures sacrifie some accuracy, but produce fast approximate and use less space.
-There are some mathematical formula to determine the memory usage  with respect to the acceptable error rate.
-Let's build some of these algorithms for stream data processing 
+## Problem Statement
+Counting the cardinality of a stream with billions of events poses a challenge in terms of memory usage and processing speed. Traditional solutions like hash maps become impractical at large scales due to their space requirements.
 
-##  count min sketch
-count min sketch supports two operations : add(x) and count(x).
-The count min sketch has two parameters: the number of buckets b and the number of hash functions l.
-l being really less than n, this compression leads to erros. l is used to implement independent trials, which reduce the errors. There are mathematical formulas for it. The magic is also that these factors are independent of the size of the dataset, which let's not forget is in the billions.
+## Solution Overview
+The Count Min Sketch offers a probabilistic data structure solution. It sacrifices some accuracy for fast approximation and reduced space usage. By employing mathematical formulas to determine memory usage based on acceptable error rates, it efficiently processes stream data.
 
-## Top K
-Combining count min sketches and a priority queue will result in top K feature.
-There is a better algorithm called [Heavy Hitter](https://www.usenix.org/system/files/conference/atc18/atc18-gong.pdf). Here is a go [package](https://github.com/segmentio/topk/tree/main) that implements it.
+## Key Features
+Operations: Supports two primary operations: add(x) and count(x).
+Parameters: Defined by the number of buckets (b) and the number of hash functions (l). The compression achieved by having l significantly less than n (the size of the dataset) introduces errors, mitigated by implementing independent trials. These parameters remain independent of dataset size, crucial for processing large datasets.
 
 
-## references
+## Additional Functionality
+### Top K
+Combining Count Min Sketches with a priority queue enables the extraction of top K features. For more robust functionality, consider the Heavy Hitter algorithm, which offers improved performance.
+
+## Resources
 1. [Heavy Hitter](https://www.usenix.org/system/files/conference/atc18/atc18-gong.pdf)
 2. [topk](https://github.com/segmentio/topk/blob/main/topk.go)
