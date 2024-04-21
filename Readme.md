@@ -16,5 +16,6 @@ Parameters: Defined by the number of buckets (b) and the number of hash function
 Combining Count Min Sketches with a priority queue enables the extraction of top K features. For more robust functionality, consider the Heavy Hitter algorithm, which offers improved performance.
 
 ## Resources
-1. [Heavy Hitter](https://www.usenix.org/system/files/conference/atc18/atc18-gong.pdf)
-2. [topk](https://github.com/segmentio/topk/blob/main/topk.go)
+1.  [Count Min Sketch Paper](http://dimacs.rutgers.edu/~graham/pubs/papers/cm-full.pdf)
+2. [Heavy Hitter](https://www.usenix.org/system/files/conference/atc18/atc18-gong.pdf)
+3. [topk](https://github.com/segmentio/topk/blob/main/topk.go)
